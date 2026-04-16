@@ -11,9 +11,10 @@ The system dynamics are modeled via thermodynamic Coupled Ordinary Differential 
 To maintain strict methodological parsimony and avoid empirical curve-fitting, the governing equations strictly utilize exact fractional mathematics for parameterization derived from fundamental constraints (e.g., $k_v = 7/200$, $\beta = 1/10$). No intermediate decimal rounding is applied during the derivation of the Jacobian matrix stability criteria.
 
 ## Repository Structure
-* `ISB_ODE_Integration.py`: The primary script containing the definition of the `bioenergetic_system` function, the $P_{ATP}$ limitation functions ($\Phi_{vaso}$ and $\Phi_{bohr}$), and the solver loop.
-* `ISB_PanAncestry_Simulation_Results.csv`: The output dataset containing the terminal phase-space coordinates ($N = 30,000$ synthetic subjects) for the EUR, AFR, and EAS modeled cohorts.
-* `requirements.txt`: List of required Python libraries (NumPy, SciPy, Pandas).
+* `01_ISB_Metadata_Extraction.py`: The data mining module responsible for programmatic retrieval of genomic and metabolic summary statistics from the NCBI PMC database.
+* `02_ISB_ODE_Simulation.py`: The primary numerical integration engine containing the thermodynamic ODE system, limitation functions ($\Phi_{vaso}$ and $\Phi_{bohr}$), and Pan-Ancestry simulation execution.
+* `ISB_PanAncestry_Simulation_Results.csv`: The output dataset containing the terminal phase-space coordinates for the modeled cohorts.
+* `requirements.txt`: List of required Python libraries (NumPy, SciPy, Pandas, Biopython).
 
 ## Installation & Execution
 To reproduce the simulated cohorts and identify the Saddle-Node Bifurcation boundaries:
